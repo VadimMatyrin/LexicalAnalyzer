@@ -165,6 +165,28 @@ namespace LexicalAnalyzer.Services
                         {
                             buffer.Append(currentChar);
                         }
+                        else
+                        {
+                            StateReset(LexemeType.Id);
+                            var lexeme = currentChar switch
+                            {
+                                '=' => LexemeType.Assign,
+                                ';' => LexemeType.Sc,
+                                '{' => LexemeType.Lb,
+                                '}' => LexemeType.Rb,
+                                '(' => LexemeType.Lp,
+                                ')' => LexemeType.Rp,
+                                '\n' => LexemeType.Nl,
+                                _ => LexemeType.InvalidLexeme
+                            };
+                            if (lexeme is LexemeType.InvalidLexeme)
+                            {
+                                state = State.Err;
+                                break;
+                            }
+                            buffer.Append(currentChar);
+                            StateReset(lexeme);
+                        }
                         break;
                     case State.Op:
                         if (IsWhitespaceOrEmpty(currentChar))
