@@ -4,18 +4,37 @@ using LexicalAnalyzer.Services;
 using LexicalAnalyzer.Services.Services;
 using System.Data;
 
+Console.WriteLine("Parser for while statement");
 RunParserForWhile();
+Console.WriteLine("Ok");
+Console.WriteLine("-----------------");
 try
 {
+
+    Console.WriteLine("Parser for while witn invalid bool");
     RunParserForWhileWithInvalidBool();
+    Console.WriteLine("Ok");
+    Console.WriteLine("-----------------");
+
 }
 catch (InvalidExpressionException e)
 {
-
     Console.WriteLine(e.Message);
+    Console.WriteLine("Error");
+    Console.WriteLine("-----------------");
 }
+
+Console.WriteLine("Parser for while with math");
 RunParserForWhileWithMath();
+Console.WriteLine("Ok");
+Console.WriteLine("-----------------");
+
+
+Console.WriteLine("Parser for math");
 RunParserForMath();
+Console.WriteLine("Ok");
+Console.WriteLine("-----------------");
+
 try
 {
     RunParserForWhileWithMathWithNoClosingBracket();
@@ -52,22 +71,22 @@ static void RunAnalyzer()
 
 static void RunParserForWhile()
 {
-    var testMathExpression = new[]
+    var testExpression = new[]
     {LexemeType.While, LexemeType.Lp, LexemeType.Id, LexemeType.RelOp, LexemeType.Number, LexemeType.Rp,
         LexemeType.Lb, LexemeType.Id, LexemeType.Assign, LexemeType.Number, LexemeType.Sc,LexemeType.Rb };
 
-    var test = new LexemParser(testMathExpression);
+    var test = new LexemParser(testExpression);
 
     test.ParseWhileStatement();
 }
 
 static void RunParserForWhileWithInvalidBool()
 {
-    var testMathExpression = new[]
+    var testExpression = new[]
     {LexemeType.While, LexemeType.Lp, LexemeType.Id, LexemeType.AddOp, LexemeType.Number, LexemeType.Rp,
         LexemeType.Lb, LexemeType.Id, LexemeType.Assign, LexemeType.Number, LexemeType.Sc,LexemeType.Rb };
 
-    var test = new LexemParser(testMathExpression);
+    var test = new LexemParser(testExpression);
 
     test.ParseWhileStatement();
 }
@@ -75,32 +94,32 @@ static void RunParserForWhileWithInvalidBool()
 
 static void RunParserForWhileWithMath()
 {
-    var testMathExpression = new[]
+    var testExpression = new[]
     {LexemeType.While, LexemeType.Lp, LexemeType.Number, LexemeType.AddOp, LexemeType.Number, LexemeType.RelOp, LexemeType.Id, LexemeType.Rp,
         LexemeType.Lb, LexemeType.Id, LexemeType.Assign, LexemeType.Number, LexemeType.Sc,LexemeType.Rb };
 
-    var test = new LexemParser(testMathExpression);
+    var test = new LexemParser(testExpression);
 
     test.ParseWhileStatement();
 }
 
 static void RunParserForWhileWithMathWithNoClosingBracket()
 {
-    var testMathExpression = new[]
+    var testExpression = new[]
     {LexemeType.While, LexemeType.Lp, LexemeType.Number, LexemeType.AddOp, LexemeType.Number, LexemeType.RelOp, LexemeType.Id, LexemeType.Rp,
         LexemeType.Lb, LexemeType.Id, LexemeType.Assign, LexemeType.Number, LexemeType.Sc };
 
-    var test = new LexemParser(testMathExpression);
+    var test = new LexemParser(testExpression);
 
     test.ParseWhileStatement();
 }
 
 static void RunParserForMath()
 {
-    var testMathExpression = new[]
+    var testExpression = new[]
     {LexemeType.Lp, LexemeType.Number, LexemeType.AddOp, LexemeType.Number, LexemeType.Rp };
 
-    var test = new LexemParser(testMathExpression);
+    var test = new LexemParser(testExpression);
 
     test.ParseMathExpression();
 }
