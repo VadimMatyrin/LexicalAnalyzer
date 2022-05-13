@@ -87,7 +87,7 @@ namespace LexicalAnalyzer.Services
                                 buffer.Append(currentChar);
                                 StateReset(lexeme);
                             }
-                        } 
+                        }
                         else if (isEndOfString)
                         {
                             state = State.F;

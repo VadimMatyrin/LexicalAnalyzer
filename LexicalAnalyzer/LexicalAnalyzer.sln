@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LexicalAnalyzer", "LexicalAnalyzer.csproj", "{FF02C31F-303B-4AF2-AEDE-8158EF1ACDBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexicalAnalyzer.Domain", "..\LexicalAnalyzer.Domain\LexicalAnalyzer.Domain.csproj", "{F3EE78BB-8C0C-40B7-A7EF-F755EA933FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LexicalAnalyzer.Domain", "..\LexicalAnalyzer.Domain\LexicalAnalyzer.Domain.csproj", "{F3EE78BB-8C0C-40B7-A7EF-F755EA933FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexicalAnalyzer.Services", "..\LexicalAnalyzer.Services\LexicalAnalyzer.Services.csproj", "{27D157A1-A4DE-44B8-8D03-205327831909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F3EE78BB-8C0C-40B7-A7EF-F755EA933FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3EE78BB-8C0C-40B7-A7EF-F755EA933FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3EE78BB-8C0C-40B7-A7EF-F755EA933FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D157A1-A4DE-44B8-8D03-205327831909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D157A1-A4DE-44B8-8D03-205327831909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D157A1-A4DE-44B8-8D03-205327831909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D157A1-A4DE-44B8-8D03-205327831909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

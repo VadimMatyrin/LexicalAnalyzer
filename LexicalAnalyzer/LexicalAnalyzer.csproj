@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LexicalAnalyzer.Domain\LexicalAnalyzer.Domain.csproj" />
+    <ProjectReference Include="..\LexicalAnalyzer.Services\LexicalAnalyzer.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

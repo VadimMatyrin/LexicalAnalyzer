@@ -12,6 +12,8 @@
         KeyWord,
         Assign,
         RelOp,
+        While,
+        ArrElement,
         If,
         Else,
         AddOp,
